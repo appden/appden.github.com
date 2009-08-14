@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ page.title }}</title>
+		<title>{{ site.title }}</title>
+		
+		<link rel="stylesheet" href="/lib/appden.css" type="text/css" />
 	</head>
 	<body>
-		<h1>{{ page.title }}</h1>
+		<div id="header">
+			<h1>
+				<a href="{{ site.url }}">{{ site.title }}</a>
+			</h1>
+			
+			<div>
+				<span>/*</span>{{ site.comment }}<span>*/</span>
+			</div>
+			
+			<a href="#" id="subscribe">Subscribe</a>
+			
+			{{ include nav.html }}
+		</div>
 		
-		{{ content }}
+		<div id="content">
+			<div id="alpha">
+				{{ content }}
+			</div>
+			
+			<div id="beta">
+				{{ include sidebar.html }}
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+		
+		<div id="footer">
+			<div id="about">
+				{% for phrase in site.footer %}
+					<div>
+						<h6>{{ phrase.verb }}</h6>
+						{{ phrase.action }}
+					</div>
+				{% endfor %}
+			</div>
+			<div id="copyright">
+				<div>Design by <a href="http://ipsleung.com">Iris Leung</a></div>
+				<div>&copy; Copyright 2009, AppDen. All Rights Reserved.</div>
+			</div>
+		</div>
+		
 	</body>
 </html>
