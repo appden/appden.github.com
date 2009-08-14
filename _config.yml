@@ -1,11 +1,11 @@
-title:		AppDen
-url: 		http://appden.github.com
-comment:	Jekyll is awesome
+title:      AppDen
+url:        http://appden.github.com
+comment:    Jekyll is awesome
 footer:
-	- verb:		Thinking
-	  action: 	YAML is awesome
-	
-	- verb: 	Listening
-	  action:	Pandora of course
+    - verb:	    Thinking
+      action:   YAML is awesome
+
+    - verb:     Listening
+      action:   Pandora of course
 
 
