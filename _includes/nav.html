@@ -1,24 +1,16 @@
 <ul id="nav">
-	<li>
-		<a href="{{ site.url }}">Blog</a>
-	</li>
-	<li>
-		<a>Apps</a>
-		<ul>
-			<li><a>Coming Soon</a></li>
-		</ul>
-	</li>
-	<li>
-		<a>Projects</a>
-		<ul>
-			<li><a>Coming Soon</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="/about/">About</a>
-		<ul>
-			<li><a href="/portfolio/">Portfolio</a></li>
-			<li><a href="mailto:scott-at-dotcom-after-appden">Contact</a></li>
-		</ul>
-	</li>
+	{% for item in site.nav %}
+		<li>
+			<a{% if item.url %} href="{{ item.url }}"{% endif %}>{{ item.name }}</a>
+			{% if item.subnav %}
+				<ul>
+					{% for item in item.subnav %}
+						<li>
+							<a{% if item.url %} href="{{ item.url }}"{% endif %}>{{ item.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
 </ul>

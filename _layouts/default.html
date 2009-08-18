@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ site.title }}</title>
+		<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 		
-		<link rel="stylesheet" href="/lib/appden.css" type="text/css" />
+		{% for css in site.css %}
+			<link rel="stylesheet" href="{{ css }}" type="text/css" />
+		{% endfor %}
+		
+		{% for css in page.css %}
+			<link rel="stylesheet" href="{{ css }}" type="text/css" />
+		{% endfor %}
 	</head>
 	<body>
 		<div id="header">
@@ -26,7 +32,9 @@
 			</div>
 			
 			<div id="beta">
-				{% include sidebar.html %}
+				{% if page.sidebar != false %}
+					{% include sidebar.html %}
+				{% endif %}
 			</div>
 			
 			<div class="clear"></div>
@@ -47,5 +55,12 @@
 			</div>
 		</div>
 		
+		{% for js in site.js %}
+			<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
+		
+		{% for js in page.js %}
+			<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>
+		{% endfor %}
 	</body>
 </html>

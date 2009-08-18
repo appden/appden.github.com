@@ -1,0 +1,7 @@
+---
+layout:   post
+title:    Second Post
+category: Test
+---
+
+This is my second post.

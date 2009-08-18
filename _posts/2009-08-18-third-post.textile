@@ -1,0 +1,7 @@
+---
+layout:   post
+title:    Third Post
+category: Test
+---
+
+This is my third post.

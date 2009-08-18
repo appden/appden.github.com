@@ -1,11 +1,47 @@
-title:      AppDen
-url:        http://appden.github.com
-comment:    Jekyll is awesome
+pygments:       true
+permalink:      /:categories/:title/
+paginate:       2
+
+exclude:
+    - README.md
+
+title:          AppDen
+url:            http://appden.github.com
+description:    "Advanced JavaScript techniques, tips on avoiding those nasty CSS bugs, and musings on technological progress."
+comment:        Jekyll is awesome
+
+author:
+    name:       Scott Kyle
+    email:      scott@appden.com
+
+nav:
+    - name:     Blog
+      url:      http://appden.github.com
+      
+    - name:     Apps
+      subnav:
+        - name: Coming Soon
+    
+    - name:     Projects
+      subnav:
+        - name: Coming Soon
+        
+    - name:     About
+      url:      /about/
+      subnav:
+        - name: Portfolio
+          url:  /portfolio/
+          
+        - name: Contact
+          url:  mailto:scott-at-dotcom-after-appden
+    
+
 footer:
-    - verb:	    Thinking
+    - verb:     Thinking
       action:   YAML is awesome
 
     - verb:     Listening
       action:   Pandora of course
-
-
+      
+css:
+    - /lib/appden.css
