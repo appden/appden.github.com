@@ -1,0 +1,51 @@
+--- 
+layout:   post
+title:    Lazy List Comprehensions in JavaScript, a Lazy Evaluation
+category: javascript
+---
+
+A while back I made "Proggit":proggit a regular stop on my daily Internet stroll.  I was struck by the readers' apparent bias toward Haskell and thought, _What the Hell, I should at least attempt to learn something new today_.  It was "here":haskell that I had that lazy evaluation Eureka moment.  So of course, I then thought to myself, _How can I get a piece of that sweet functional programming action in JavaScript?_
+
+For the uninitiated, lazy evaluation is, in a nutshell, the concept of a program not computing the value of something until absolutely needed.  This is especially useful for long (perhaps even infinite) lists that would cause severe nausea or swelling to compute ahead of time.  The example I read about used the "Fibonacci sequence":fibs to butter up my brain, so that is what I will use here to electrify yours.
+
+[proggit]http://www.reddit.com/r/programming
+[haskell]http://www.haskell.org/~pairwise/intro/section1.html#part5
+[fibs]http://en.wikipedia.org/wiki/Fibonacci_number 
+Quite simply, I wanted the constructor of my _Lazy List_ to take a definition function, such as the following for the Fibonacci sequence:
+
+bc(javascript).. function fibs(i) {
+  return i <= 1 ? i : fibs(i - 1) + fibs(i - 2);
+}
+
+p. But why would anyone need anything beyond the @fibs@ function written above? If the unlikely programmer who needs the tenth member of the Fib sequence, just ran @fibs(10)@, she would happily get 55 as the answer.  Ahh, but she may want the eleventh member shortly thereafter...
+
+Yes, indeed, she needs a simple caching mechanism.  This is a recursive definition we're talking about here, not exactly cheap labor.  So here is my first attempt at giving that poor unlikely programmer just what she needs:
+
+bc(javascript).. // my lazy constructor
+function Lazy(def) {
+  var cache = [];
+
+  return function(i) {
+    return (i in cache) ? cache[i] :
+      (cache[i] = def.call(arguments.callee, i));
+  };
+}
+
+// a more awesome Fibonacci sequence
+var fibs = new Lazy(function(i) {
+  return i <= 1 ? i : this(i - 1) + this(i - 2);
+});
+
+p. There, now she must be happy.  When she wants that eleventh number in the sequence, the ninth and tenth will already be cached and ready to be added together to give 89 as the result.  One little goodie I snuck in there was binding the definition function to the generator so we can conveniently call it with the keyword, @this@.  Also, using the @new@ operator is optional, though I find it more canonical to use since we are creating a _new_ generator when calling the constructor.
+
+When pushing the limits of our cool new sequence, our happy but unlikely programmer will eventually hit a brick wall of "too much recursion", though how soon that occurs very much depends on the browser she is using.  Hopefully, when fed up with our simple solution, she'll fire up Firefox 3 to enjoy its native "generator expressions in JavaScript 1.8":firefox.[1]
+
+Array-like methods, such as @slice@ and @forEach@, can be added to our generator, but that will be left as an exercise for the reader (unless you pay me).
+
+
+fn1. For more of the bleeding edge, read "John Resig's rundown of JavaScript 1.8":resig and "Mozilla's coverage of JavaScript 1.7":mozilla
+
+
+[firefox]https://developer.mozilla.org/en/New_in_JavaScript_1.8#Generator_expressions
+[resig]http://ejohn.org/blog/javascript-18-progress/
+[mozilla]http://developer.mozilla.org/en/New_in_JavaScript_1.7

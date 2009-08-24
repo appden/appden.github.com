@@ -1,0 +1,46 @@
+--- 
+layout:   post
+title:    Protect Your Class Methods from Evildoers
+category: javascript
+---
+
+With the advent of MooTools 1.2.2 comes the ability to mark Class methods as -private- +protected+.  Let's take a look at some code.
+ 
+bc(javascript).. var Person = new Class({
+
+  initialize: function(name){
+    this.name = name;
+  },
+
+  secret: function(){
+    return 'I sometimes like girly drinks';
+  }.protect(),  // <== MAGIC SAUCE
+
+  describe: function(){
+    return 'My name is {name}. {secret}. I kid, I kid.'.substitute({
+      name: this.name,
+      secret: this.secret()
+    });
+  }
+
+});
+
+var scott = new Person('Scott');
+
+
+
+p. Notice the @protect@ call on the @secret@ method.  It prevents outsiders from calling that method and believing false facts about that person.
+
+@scott.secret();@
+%{color:#f00}_The method "secret" cannot be called._%
+
+It can, however, be called from within an another method.
+
+@scott.describe();@
+_My name is Scott. I sometimes like girly drinks. I kid, I kid._
+
+There you have it -- a cool, new, undocumented feature available now in MooTools 1.2.2!
+
+As I mentioned in my previous article, I have a working implementation of a Privates mutator (to privatize variables) for the latest version of MooTools, but I am waiting to see how post-initialization mutators will look in More.  It's something I've discussed at length with "Aaron Newton":aaron, and hopefully will be available soon.
+
+[aaron]http://clientcide.com

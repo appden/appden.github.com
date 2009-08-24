@@ -1,0 +1,31 @@
+--- 
+layout:   post
+title:    Predictions for the Next iPhone
+category: tech
+---
+
+The iPhone 3G S has been all the rage, and admittedly I'm still pondering the upgrade from my 3G.  Sure, I can nab it for $200 from AT&T and sell my current one to cover the costs, but what about next year?  Will AT&T allow full subsidized price again to those who already took advantage of it twice within two years?  I'm not so sure.
+
+So I think I'll wait for the next iPhone, and in the interest of saying "I told you so," I am making the following predictions for it and the 4.0 OS. 
+h4. iPhone 4th Generation (though probably not 4G)
+
+(double-space)* *OLED Display* -- That's right.  I see this being its biggest differentiator.  It'll be bright, vivid, energy efficient, and sexy as hell.  When seen next to an older model, there'll be absolutely no comparison, and again Apple will have raised the bar for all other mobile devices that follow.
+* *Multi-core* -- This has already been speculated on "AppleInsider":appleinsider, and I suggest you read more about it there if you haven't already.  See below for my prediction on backgrounding support for third party apps.
+* *Faster Networking* -- I see this coming in the form of 802.11n support, which will work really nicely with WiFi Syncing (see below).  They just introduced HSDPA 7.2 Mbps support in the 3G S and AT&T still has to play catch-up, so I don't think the 4th-gen will really be 4G, as in WiMax or something similar.
+* *Minor Cosmetic Update* -- Time to thin it out a bit and visually differentiate it from the 3G and 3G S.  I have a hunch that they may offer a wider range of color options, as the iPods do.
+* *Better Battery Life* -- Time to steal some tech from the MacBook division to keep 3G network users happy.
+* *Same camera* -- I see another camera update coming in the following model, not this one.  Also, I really don't expect a front camera for video chatting.  It just wouldn't get used by the vast majority of users.
+
+h4. iPhone 4.0 Operating System
+
+(double-space)* *WiFi Sync* -- It's something I've always wished for more than copy & paste and I believe 4.0 will make it a reality.  The programming is mostly there with the Apple TV and MobileMe, and with MMS and copy & paste out of the way, I think we'll start to see this more on iPhone wish lists.
+* *Reimagined Home Screen* -- The current home screen design is already buckling under the weight of the more and more apps that people are loading onto their phones.  The new design will still be very "iPhone-esque," but will make launching and organizing large numbers of apps much easier for the user.
+* *Limited Multi-tasking Support* -- We have push now, but the Pre has a nice card-centric UI for running multiple apps at once.  I see Apple allowing something similar, but with reasonable limitations, in 4.0 for both the 3G S and the 4th-gen model.  The 3G S has the horsepower but may need more limitations, while with two cores, the 4th-gen will practically be made for this sort of thing. I can see them adding a certification process for apps that want to be able to run in the background.
+
+Also, I predict that Google will soon beef up their iPhone app offerings with GMail and maybe Docs.  At the same time, they'll expand push support to the iPhone.  There's already offline support, but you still have to use it in Safari, which definitely is a limitation.
+
+There you have it, all my iPhone related predictions.  I'll give myself a report card after the next WWDC.
+
+I've neglected this infant blog for too long.  I apologize if you feel like it's been wasting precious space in your feed reader.  My attention has been all over, and sometimes I second guess posting about a topic becuase I feel it's been covered well enough elsewhere.  I'm about to embark on my month-long vacation kayaking in Oregon and backpacking through Europe, but I have many blog post ideas for when I return.
+
+[appleinsider]http://www.appleinsider.com/articles/09/06/16/multi_core_arm_chips_bound_for_apples_next_gen_iphones.html

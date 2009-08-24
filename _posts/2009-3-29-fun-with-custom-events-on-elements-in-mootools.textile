@@ -1,0 +1,70 @@
+--- 
+layout:   post
+title:    Fun with Custom Events on Elements in MooTools
+category: javascript
+---
+
+Tonight, I've been playing with the fantastic MooTools plugin, "ReMooz":remooz by "Harald Kirschner":digi, with the hope of adapting it for my upcoming web portfolio.  One of the pieces of functionality I was looking for was to close the zoom box when the user clicks outside of it.  The solution I thought had the most Moo was to create a custom event[1], _clickout_.
+
++([*update:*] I just discovered "Jan Kassens":jan blogged a similar custom event, _outerClick_.  We took very different approaches, but I thought I'd give proper credit)+
+
+[remooz]http://digitarald.de/project/remooz
+[digi]http://digitarald.de
+[jan]http://blog.kassens.net/outerclick-event 
+bc(javascript). Element.Events.clickout = {
+  base : 'click',  // attach click event to element
+  condition : function(event) {
+    if (event.target.href) return true;  // allow links
+    event.stop();  // stop event bubbling up to the body
+    return false;  // never run handler when clicking on element
+  },
+  onAdd : function(fn) {
+    $(this.getDocument().body).addEvent('click', fn);
+  },
+  onRemove : function(fn) {
+    $(this.getDocument().body).removeEvent('click', fn);
+  }
+};
+
++([*edit:*] fixed bug that prevented links from working inside the element, further updates will be made on GitHub "here":clickout)+
+
+The condition of the custom event is executed each time the base event is fired to with a return value that determines if the handler should be run.  The condition above prevents the click event from bubbling[2] up to the body, where the handler will actually be attached in the _onAdd_ callback.  This effectively runs the handler passed into the _clickout_ event when anywhere on the page is clicked *except* inside the element where the event was attached.  For example, in ReMooz I wanted to add this event to the zoom box when it is opened.
+
+bc(javascript). ReMooz.assign('.thumb', {
+  ...
+  onOpen : function() {
+    this.box.addEvent('clickout', this.close.bind(this));
+  },
+  onClose : function() {
+    this.box.removeEvents('clickout');
+  }
+});
+
+The event must be removed when the zoom box is closed so the click event attached to be body is also removed.  If the zoom box didn't have a close button in it, then I could have applied a _singular event_[3] pattern like the "@jQuery.one()@":one method, recreated in MooTools below:
+
+bc(javascript). Native.implement([Element, Window, Document, Events], {
+  oneEvent : function(type, fn) {
+    return this.addEvent(type, function() {
+      this.removeEvent(type, arguments.callee);
+      return fn.apply(this, arguments);
+    });
+  }
+});
+
++([*edit:*] thanks to gonchuki for the idea of using @arguments.callee@, further updates will be made on GitHub "here":oneevent)+
+
+This allows you to attach an event that only will be run once and then automatically detached.  The only problem with -this method- +[@oneEvent()@]+ is that its implementation doesn't allow you to remove a specific handler with the @removeEvent()@ method; you must use @removeEvents()@ instead to remove all events of -a certain type- +the type you added with this method+.  jQuery doesn't have this problem because it uses an _event proxy_, so you can still unbind a specific handler.  With a little refactoring, MooTools could allow the same kind of functionality, though the real-world usage of this pattern is admittedly rare.
+
+I deeply apologize for becoming so serious in this post, I'll try to be funnier next time!
+
+fn1. Check out the "super cool demo and sample code":demo for more info on custom events.
+
+fn2. A quick "refresher course":events on event bubbling, if desired.
+
+fn3. I just made that term up.  I hope it sticks.
+
+[clickout]http://gist.github.com/91436
+[oneevent]http://gist.github.com/91434
+[one]http://docs.jquery.com/Events/one
+[demo]http://demos.mootools.net/CustomEvents
+[events]http://www.quirksmode.org/js/events_order.html

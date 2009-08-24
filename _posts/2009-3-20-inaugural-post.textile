@@ -1,0 +1,20 @@
+--- 
+layout:   post
+title:    Inaugural <code>POST</code>
+category: personal
+---
+
+Please allow me to briefly introduce myself and my very first blog (making me fashionably late to the party).[1]
+
+I'm a Northern Californian living in New York City as a recent college graduate working as a web developer.  "For whom?" you might ask.  "For "R/GA":rga," I would then answer, "mostly on "NikeBasketball.com":bball, but I could be for you too if there's mutual interest -- please feel free to "contact me":mailto:scott-at-dotcom-after-appden anytime."
+
+I'm somewhat of a JavaScript junkie.  When I don't feel like doing anything else, I just open up the latest version of "MooTools":mootools, "jQuery":jquery, or anything else interesting, and just read for anything that I might not already understand.  The reasons why I love JavaScript so much are deserving of many future posts, so I won't spill the beans on that quite yet.  Sometimes it feels like every day I'm learning or seeing something interesting in JavaScript or CSS, so this will be my new outlet for sharing those juicy tidbits of knowledge to whomever is listening.  There will also a smattering of (hopefully) insightful commentary and opinion on whatever is new in the tech world, probably mostly Apple related due to my strong fruit company bias.
+
+In addition to my yapping, this site will host my soon-to-be-beta Mac video conversion and tagging utility, which currently is _[la]sine nomine_, as well as my MooTools and jQuery plugins.  A small portfolio would be nice too, we'll see.  I suspect that if you're reading this, then I've already written a number of posts, maybe one of which you found interesting, which led you to read back into my archives.  For that, I must say, "Thank you for your interest."
+
+fn1. I had to start things off with a cheesy title.
+
+[rga]http://rga.com
+[bball]http://nikebasketball.com
+[mootools]http://mootools.net
+[jquery]http://jquery.com 
