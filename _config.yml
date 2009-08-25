@@ -45,3 +45,8 @@ footer:
       
 css:
     - /lib/appden.css
+    
+js:
+    - /lib/mootools-core.js
+    - /lib/mootools-more.js
+    - /lib/appden.js
