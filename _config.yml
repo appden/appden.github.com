@@ -16,7 +16,7 @@ author:
 
 nav:
     - name:     Blog
-      url:      http://appden.github.com
+      url:      /
       
     - name:     Apps
       subnav:

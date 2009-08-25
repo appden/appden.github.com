@@ -10,6 +10,14 @@ layout: default
 	<div class="entry-contents">{{ content }}</div>
 </div>
 
-<div>Next: {{ page.next.url }}</div>
-<div>Prev: {{ page.previous.url }}</div>
+<div id="pagination">
+	{% if page.previous %}
+		<a class="prev" href="/{{ page.previous.url }}">&laquo; Previous</a>
+	{% endif %}
+	
+	{% if page.next %}
+		<a class="next" href="/page{{ page.next.url }}/">Next &raquo;</a>
+	{% endif %}
+</div>
+
 
