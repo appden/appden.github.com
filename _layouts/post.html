@@ -2,13 +2,10 @@
 layout: default
 ---
 
-<div class="entry">
-	<h2>{{ page.title }}</h2>
-	
-	<div class="entry-date">{{ page.date | date:'%b <div>%d</div> %Y' }}</div>
-	
-	<div class="entry-contents">{{ content }}</div>
-</div>
+{% assign post = page %}
+{% assign detail = true %}
+
+{% include post.html %}
 
 <div id="pagination">
 	{% if page.previous %}

@@ -3,13 +3,7 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-	<div class="entry">
-		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-		
-		<div class="entry-date">{{ post.date | date:'%b <div>%d</div> %Y' }}</div>
-		
-		<div class="entry-contents">{{ post.content }}</div>
-	</div>
+	{% include post.html %}
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
