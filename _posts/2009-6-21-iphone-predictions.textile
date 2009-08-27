@@ -6,7 +6,8 @@ category: tech
 
 The iPhone 3G S has been all the rage, and admittedly I'm still pondering the upgrade from my 3G.  Sure, I can nab it for $200 from AT&T and sell my current one to cover the costs, but what about next year?  Will AT&T allow full subsidized price again to those who already took advantage of it twice within two years?  I'm not so sure.
 
-So I think I'll wait for the next iPhone, and in the interest of saying "I told you so," I am making the following predictions for it and the 4.0 OS. 
+So I think I'll wait for the next iPhone, and in the interest of saying "I told you so," I am making the following predictions for it and the 4.0 OS.
+
 h4. iPhone 4th Generation (though probably not 4G)
 
 (double-space)* *OLED Display* -- That's right.  I see this being its biggest differentiator.  It'll be bright, vivid, energy efficient, and sexy as hell.  When seen next to an older model, there'll be absolutely no comparison, and again Apple will have raised the bar for all other mobile devices that follow.
@@ -29,3 +30,4 @@ There you have it, all my iPhone related predictions.  I'll give myself a report
 I've neglected this infant blog for too long.  I apologize if you feel like it's been wasting precious space in your feed reader.  My attention has been all over, and sometimes I second guess posting about a topic becuase I feel it's been covered well enough elsewhere.  I'm about to embark on my month-long vacation kayaking in Oregon and backpacking through Europe, but I have many blog post ideas for when I return.
 
 [appleinsider]http://www.appleinsider.com/articles/09/06/16/multi_core_arm_chips_bound_for_apples_next_gen_iphones.html
+

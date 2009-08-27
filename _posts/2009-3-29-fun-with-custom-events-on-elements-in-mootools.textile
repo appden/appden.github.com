@@ -11,20 +11,23 @@ Tonight, I've been playing with the fantastic MooTools plugin, "ReMooz":remooz b
 [remooz]http://digitarald.de/project/remooz
 [digi]http://digitarald.de
 [jan]http://blog.kassens.net/outerclick-event 
-bc(javascript). Element.Events.clickout = {
+
+
+{% highlight javascript %}
+Element.Events.clickout = {
   base : 'click',  // attach click event to element
   condition : function(event) {
-    if (event.target.href) return true;  // allow links
-    event.stop();  // stop event bubbling up to the body
+    event.stopPropagation();  // stop event from bubbling up
     return false;  // never run handler when clicking on element
   },
   onAdd : function(fn) {
-    $(this.getDocument().body).addEvent('click', fn);
+    this.getDocument().addEvent('click', fn);
   },
   onRemove : function(fn) {
-    $(this.getDocument().body).removeEvent('click', fn);
+    this.getDocument().removeEvent('click', fn);
   }
 };
+{% endhighlight %}
 
 +([*edit:*] fixed bug that prevented links from working inside the element, further updates will be made on GitHub "here":clickout)+
 

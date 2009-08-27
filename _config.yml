@@ -7,6 +7,7 @@ exclude:
 
 title:          AppDen
 url:            http://appden.github.com
+feed:           /atom.xml
 description:    "Advanced JavaScript techniques, tips on avoiding those nasty CSS bugs, and musings on technological progress."
 comment:        Jekyll is awesome
 
@@ -45,6 +46,7 @@ footer:
       
 css:
     - /lib/appden.css
+    - /lib/syntax.css
     
 js:
     - /lib/mootools-core.js

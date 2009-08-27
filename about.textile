@@ -21,9 +21,6 @@ h2{padding-top: 20px;}. Site Credits
 * "Movable Type":http://movabletype.org/ (Blog)
 * "MooTools":http://mootools.net (Nirvana)
 * "SHJS":http://shjs.sourceforge.net/ (Syntax Highlighting)
-* "FormCheck":http://mootools.floor.ch/en/download/index.htm (Comments Policeman)
-* "UvumiTools Textarea":http://tools.uvumi.com/textarea.html (Comments Scribe)
+* "FormCheck":http://mootools.floor.ch/en/download/index.htm (Form Police)
 * "ReMooz":http://digitarald.de/project/remooz/ (Portfolio Love)
-* "IE6 Update":http://ie6update.com/ (IE6 Hate)
-* "jQuery":http://jquery.com/ (Accomplice in the IE6 Hating)
  
