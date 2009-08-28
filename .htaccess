@@ -5,7 +5,7 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/javascript text
 # Deny access to directory listing and Follow symbolic links
 
 Options -Indexes +SymLinksIfOwnerMatch
-DirectoryIndex index.php index.html index.htm mtview.php
+DirectoryIndex index.html index.htm index.php
 IndexIgnore *
 
 # Redirect errors to custom error page
@@ -25,13 +25,11 @@ IndexIgnore *
 # ErrorDocument 502 /error/
 # ErrorDocument 503 /error/
 
-# Redirect pagination to proper script
+# Rewrites...
 
 RewriteEngine On
 
-RewriteRule ^page([0-9]+)/?$  index_page.html?offset=$1 [NC]
-
-# Redirect links to assets from other domains
+# Redirect links to downloads from other domains
 
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?appden\.com/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
@@ -39,21 +37,15 @@ RewriteRule ^(.*)/[^/]+\.(pkg|dmg|zip)$ $1/ [R,NC,L]
 
 # Prevent accessing hidden files
 
-RewriteRule ^(.*/)?\.[^\.]+$ - [F,NS,L]
-
-# Automatic translation from Google
-
-RewriteRule ^(.*/)?(ar|bg|zh-CN|zh-TW|hr|cs|da|nl|fi|fr|de|el|hi|it|ja|ko|no|pl|pt|ro|ru|es|sv)$ http://www.google.com/translate_c?hl=$2&sl=en&u=http://appden.com/$1 [NC,L]
-
-# Movable Type Dynamic Pages
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)(\?.*)?$ mtview.php$2 [L,QSA]
+RewriteRule ^(.*/)?\.[^.]+$ - [F,NS,L]
 
 # Feedburner
 
 RewriteCond %{HTTP_USER_AGENT} !^(FeedBurner|FeedValidator) [NC]
 RewriteCond %{QUERY_STRING} !debug [NC]
 RewriteRule ^atom.xml http://feeds2.feedburner.com/appden [L,R=302]
+
+# Automatic translation from Google
+
+RewriteRule ^(.*/)?(ar|bg|zh-CN|zh-TW|hr|cs|da|nl|fi|fr|de|el|hi|it|ja|ko|no|pl|pt|ro|ru|es|sv)$ http://www.google.com/translate_c?hl=$2&sl=en&u=http://appden.com/$1 [NC,L]
 
