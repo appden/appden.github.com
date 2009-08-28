@@ -14,6 +14,16 @@ comment:        Jekyll is awesome
 author:
     name:       Scott Kyle
     email:      scott@appden.com
+    
+about: >
+    Hi, I'm Scott Kyle, a JavaScript and Apple enthusiast.
+    I recently became an offical developer for <a href="http://mootools.net">MooTools</a>.
+    You can follow me on <a href="http://twitter.com/appden">Twitter</a>, fork me
+    <a href="http://github.com/appden">GitHub</a>, and check out some of my recent work
+    on my <a href="/portfolio/">portfolio</a>.
+    
+disqus:
+    id:         appden
 
 nav:
     - name:     Blog

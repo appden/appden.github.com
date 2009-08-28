@@ -2,6 +2,7 @@
 	http://appdev.appden.com/lib/appden.css
 	http://www.appden.com/lib/appden.css
 	http://appden.com/lib/appden.css
+	http://localhost:4000/lib/appden.css/
 */
 
 /* @group Defaults */
@@ -86,10 +87,6 @@ sup {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-img {
-	display: block;
 }
 
 a, h1, h2, h3, h4, h5, h6 {
@@ -292,8 +289,12 @@ h3 {
 
 /* @group Entry */
 
-.entry, .entry-module {
-	margin: 0 0 45px 55px;
+.entry, #pagination, #comments {
+	margin-left: 55px;
+}
+
+.entry {
+	margin-bottom: 45px;
 }
 
 .entry-date {
@@ -356,7 +357,7 @@ h3 {
 	margin: 1em 0 0.5em;
 }
 
-.entry-contents a, .comment-contents a {
+.entry-contents a {
 	text-decoration: underline;
 }
 
@@ -385,11 +386,13 @@ h3 {
 	border-bottom: 2px solid black;
 }
 
-.entry-contents td, .entry-contents th {
+.entry-contents td,
+.entry-contents th {
 	padding: 0 1em;
 }
 
-.entry-contents td + td, .entry-contents th + th {
+.entry-contents td + td,
+.entry-contents th + th {
 	border-left: 1px solid black;
 }
 
@@ -438,99 +441,50 @@ h3 {
 
 /* @end */
 
+/* @group Pagination */
+
+#pagination {
+	text-align: center;
+}
+
+#pagination .prev {
+	float: left;
+}
+
+#pagination .next {
+	float: right;
+}
+
 /* @end */
 
-/* @group Entry Modules */
+/* @group Comments */
 
-.comment {
-	background: url(images/horizontal.png) repeat-x;
-	margin-bottom: 25px;
+#comments {
+	clear: both;
+	padding-top: 40px;
 }
 
-.comment-info {
-	padding: 8px 0;
-	font-weight: bold;
-	color: #737373;
+#comments #dsq-new-post {
+	padding-bottom: 20px;
 }
 
-.comment-author {
-	color: #313131;
+#comments input, #comments textarea {
+	background: none;
+	resize: none;
 }
 
-.comment-date {
-	margin-left: 0.5em;
-	font-weight: normal;
-	color: #a9a9a9;
-}
-
-.comment-contents {
-	margin: 0 1em;
-	line-height: 1.4;
-}
-
-.comment-contents p {
-	margin-bottom: 1em;
-}
-
-.starred .star {
-	background-image: url(images/star.png);
-	float: left;
-	width: 18px;
-	height: 18px;
-	margin: 5px 0 0 -32px;
-}
-
-.starred .comment-info,
-.starred .comment-author,
-.starred .comment-author a {
-	color: #218b98;
-}
-
-#comment-form {
-	display: none;
-}
-
-#comment-form input, #comment-form textarea {
+#comments .dsq-header-avatar img {
 	display: block;
-	margin-bottom: 6px;
 }
 
-#comment-form input {
-	width: 210px
+#comments .dsq-comment-body,
+#comments .dsq-comment-footer {
+	padding-left: 4px;
 }
 
-#comment-form textarea {
-	width: 410px;
-	height: 65px;
-}
+/* @end */
 
-#comment-form .captcha, #comment-form .spinner {
-	height: 40px;
-}
-
-#comment-form .captcha + input {
-	font-size: 26px;
-}
-
-#comment-form .captcha,
-#comment-form .captcha + input {
-	width: 148px;
-}
-
-#comment-form .captcha,
-#comment-form .captcha-input,
-#comment-form .submit,
-#comment-form .spinner {
-	float: left;
-	margin-right: 5px;
-}
-
-#comment-form .submit {
-	width: 108px;
-	height: 42px;
-	text-indent: -1000px;
-	background-image: url(images/submit.png);
-}
+/* @end */
 
 /* @end */
 
@@ -574,8 +528,6 @@ h3 {
 	background: none;
 	color: #464646;
 }
-
-/* @end */
 
 /* @end */
 

@@ -9,12 +9,26 @@ layout: default
 
 <div id="pagination">
 	{% if page.previous %}
-		<a class="prev" href="/{{ page.previous.url }}">&laquo; Previous</a>
+		<a class="prev" href="{{ page.previous.url }}">&laquo; {{ page.previous.title | truncatewords:5 }}</a>
 	{% endif %}
 	
 	{% if page.next %}
-		<a class="next" href="/page{{ page.next.url }}/">Next &raquo;</a>
+		<a class="next" href="{{ page.next.url }}">{{ page.next.title | truncatewords:5 }} &raquo;</a>
 	{% endif %}
+</div>
+
+<div id="comments">
+	<div id="disqus_thread"></div>
+
+	<script type="text/javascript">
+		var disqus_developer = (/localhost|github/i).test(location.host);
+	</script>
+
+	<script type="text/javascript" src="http://disqus.com/forums/{{ site.disqus.id }}/embed.js"></script>
+
+	<noscript>
+		<a href="http://{{ site.disqus.id }}.disqus.com/?url=ref">View the discussion thread.</a>
+	</noscript>
 </div>
 
 
