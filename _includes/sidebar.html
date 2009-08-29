@@ -3,3 +3,23 @@
 	<h3><a href="/about/">About Me</a></h3>
 	<p>{{ site.about }}</p>
 </div>
+
+{% if page.title %}
+	<div class="widget">
+		<h3>Recent Entries</h3>
+		<ul>
+			{% for post in site.posts limit:5 %}
+				<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}
+
+<div class="widget">
+	<h3>Good Reads</h3>
+	<ul>
+		{% for bookmark in site.bookmarks %}
+			<li><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
