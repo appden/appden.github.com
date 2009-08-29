@@ -16,7 +16,8 @@ I first discovered this when the "@oneEvent@":oneevent method that I added to th
 [jsclass]http://blog.jcoglan.com/2009/03/04/urgent-bug-fix-release-for-jsclass-16/ 
 Here is the reduction that I submitted to Apple:
 
-bc(javascript).. // constructor
+{% highlight javascript %}
+// constructor
 var House = function() {};
 House.prototype = {
   garage : 1,
@@ -45,8 +46,9 @@ print('check for pool in house...' + !!house.pool);
 print('check for pool in mansion...' + !!mansion.pool);
 
 function print(line) { document.write(line + '<br/>'); }
+{% endhighlight %}
 
-p. Which in Safari 4 Beta, yields...
+Which in Safari 4 Beta, yields...
 
 bc. house has a garage
 house has a yard

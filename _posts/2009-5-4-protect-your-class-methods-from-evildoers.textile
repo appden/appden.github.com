@@ -6,7 +6,8 @@ category: javascript
 
 With the advent of MooTools 1.2.2 comes the ability to mark Class methods as -private- +protected+.  Let's take a look at some code.
  
-bc(javascript).. var Person = new Class({
+{% highlight javascript %}
+var Person = new Class({
 
   initialize: function(name){
     this.name = name;
@@ -17,7 +18,7 @@ bc(javascript).. var Person = new Class({
   }.protect(),  // <== MAGIC SAUCE
 
   describe: function(){
-    return 'My name is {name}. {secret}. I kid, I kid.'.substitute({
+    return "Hi, I'm {name}. {secret}. I kid, I kid.".substitute({
       name: this.name,
       secret: this.secret()
     });
@@ -26,8 +27,7 @@ bc(javascript).. var Person = new Class({
 });
 
 var scott = new Person('Scott');
-
-
+{% endhighlight %}
 
 p. Notice the @protect@ call on the @secret@ method.  It prevents outsiders from calling that method and believing false facts about that person.
 
@@ -37,7 +37,7 @@ p. Notice the @protect@ call on the @secret@ method.  It prevents outsiders from
 It can, however, be called from within an another method.
 
 @scott.describe();@
-_My name is Scott. I sometimes like girly drinks. I kid, I kid._
+_Hi, I'm Scott. I sometimes like girly drinks. I kid, I kid._
 
 There you have it -- a cool, new, undocumented feature available now in MooTools 1.2.2!
 

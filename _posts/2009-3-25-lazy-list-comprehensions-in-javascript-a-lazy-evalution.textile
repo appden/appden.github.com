@@ -13,15 +13,18 @@ For the uninitiated, lazy evaluation is, in a nutshell, the concept of a program
 [fibs]http://en.wikipedia.org/wiki/Fibonacci_number 
 Quite simply, I wanted the constructor of my _Lazy List_ to take a definition function, such as the following for the Fibonacci sequence:
 
-bc(javascript).. function fibs(i) {
+{% highlight javascript %}
+function fibs(i) {
   return i <= 1 ? i : fibs(i - 1) + fibs(i - 2);
 }
+{% endhighlight %}
 
-p. But why would anyone need anything beyond the @fibs@ function written above? If the unlikely programmer who needs the tenth member of the Fib sequence, just ran @fibs(10)@, she would happily get 55 as the answer.  Ahh, but she may want the eleventh member shortly thereafter...
+But why would anyone need anything beyond the @fibs@ function written above? If the unlikely programmer who needs the tenth member of the Fib sequence, just ran @fibs(10)@, she would happily get 55 as the answer.  Ahh, but she may want the eleventh member shortly thereafter...
 
 Yes, indeed, she needs a simple caching mechanism.  This is a recursive definition we're talking about here, not exactly cheap labor.  So here is my first attempt at giving that poor unlikely programmer just what she needs:
 
-bc(javascript).. // my lazy constructor
+{% highlight javascript %}
+// my lazy constructor
 function Lazy(def) {
   var cache = [];
 
@@ -35,8 +38,9 @@ function Lazy(def) {
 var fibs = new Lazy(function(i) {
   return i <= 1 ? i : this(i - 1) + this(i - 2);
 });
+{% endhighlight %}
 
-p. There, now she must be happy.  When she wants that eleventh number in the sequence, the ninth and tenth will already be cached and ready to be added together to give 89 as the result.  One little goodie I snuck in there was binding the definition function to the generator so we can conveniently call it with the keyword, @this@.  Also, using the @new@ operator is optional, though I find it more canonical to use since we are creating a _new_ generator when calling the constructor.
+There, now she must be happy.  When she wants that eleventh number in the sequence, the ninth and tenth will already be cached and ready to be added together to give 89 as the result.  One little goodie I snuck in there was binding the definition function to the generator so we can conveniently call it with the keyword, @this@.  Also, using the @new@ operator is optional, though I find it more canonical to use since we are creating a _new_ generator when calling the constructor.
 
 When pushing the limits of our cool new sequence, our happy but unlikely programmer will eventually hit a brick wall of "too much recursion", though how soon that occurs very much depends on the browser she is using.  Hopefully, when fed up with our simple solution, she'll fire up Firefox 3 to enjoy its native "generator expressions in JavaScript 1.8":firefox.[1]
 

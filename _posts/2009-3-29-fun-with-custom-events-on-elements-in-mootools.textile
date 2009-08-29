@@ -33,7 +33,8 @@ Element.Events.clickout = {
 
 The condition of the custom event is executed each time the base event is fired to with a return value that determines if the handler should be run.  The condition above prevents the click event from bubbling[2] up to the body, where the handler will actually be attached in the _onAdd_ callback.  This effectively runs the handler passed into the _clickout_ event when anywhere on the page is clicked *except* inside the element where the event was attached.  For example, in ReMooz I wanted to add this event to the zoom box when it is opened.
 
-bc(javascript). ReMooz.assign('.thumb', {
+{% highlight javascript %}
+ReMooz.assign('.thumb', {
   ...
   onOpen : function() {
     this.box.addEvent('clickout', this.close.bind(this));
@@ -42,10 +43,12 @@ bc(javascript). ReMooz.assign('.thumb', {
     this.box.removeEvents('clickout');
   }
 });
+{% endhighlight %}
 
 The event must be removed when the zoom box is closed so the click event attached to be body is also removed.  If the zoom box didn't have a close button in it, then I could have applied a _singular event_[3] pattern like the "@jQuery.one()@":one method, recreated in MooTools below:
 
-bc(javascript). Native.implement([Element, Window, Document, Events], {
+{% highlight javascript %}
+Native.implement([Element, Window, Document, Events], {
   oneEvent : function(type, fn) {
     return this.addEvent(type, function() {
       this.removeEvent(type, arguments.callee);
@@ -53,6 +56,7 @@ bc(javascript). Native.implement([Element, Window, Document, Events], {
     });
   }
 });
+{% endhighlight %}
 
 +([*edit:*] thanks to gonchuki for the idea of using @arguments.callee@, further updates will be made on GitHub "here":oneevent)+
 

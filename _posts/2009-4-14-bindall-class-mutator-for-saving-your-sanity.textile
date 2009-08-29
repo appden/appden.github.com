@@ -7,15 +7,17 @@ MooTools is just the best JavaScript thing ever.  And I say that totally subject
 
 The "Binds mutator":binds is particularly headache relieving.  My only issue with it is that you need to list out all the methods you want bound, which somehow, I am very prone to jacking up due to forgetfulness or quick refactoring.
 
-bc(javascript). Binds : ['update', 'include', ...]  // yadi yada
+{% highlight javascript %}
+Binds : ['update', 'include', ...]  // yadi yada
+{% endhighlight %}
 
 So since I have nothing better to do in the airport than watch a depressing "House episode":house, I figured I'd write my own BindAll mutator to save myself from my own misery (and maybe save you from yours).
 
 [binds]http://www.clientcide.com/code-releases/classbinds-for-mootols-is-back/
 [house]http://www.fox.com/house/recaps/s5_e20.htm
  
-
-bc(javascript).. Class.Mutators.BindAll = function(self, bool) {
+{% highlight javascript %}
+Class.Mutators.BindAll = function(self, bool) {
   if (!bool) return self;      // mutate or get out
 	
   var init = self.initialize;  // save original, if there is one
@@ -38,14 +40,19 @@ bc(javascript).. Class.Mutators.BindAll = function(self, bool) {
 };
 
 Class.Mutators.BindAll.exclude = ['constructor', 'initialize', 'parent'];
+{% endhighlight %}
 
-p. With this, all methods get bound, and it's this simple:
+With this, all methods get bound, and it's this simple:
 
-bc(javascript). BindAll : true  // or anything else truthy
+{% highlight javascript %}
+BindAll : true  // or anything else truthy
+{% endhighlight %}
 
 So now, class methods can be passed around without fear of them forgetting who @this@ is:
 
-bc(javascript). $('flashing_red').addEvent('click', self.destruct);
+{% highlight javascript %}
+$('flashing_red').addEvent('click', self.destruct);
+{% endhighlight %}
 
 This might not be for everyone, but for me, I can't see why I wouldn't want all my methods to be bound properly, and if I do run into that scenario, then I'd fall back to the regular Binds mutator.  I also made the function name exclude list accessible to the programmer to add more if needed.  Bugfixes will be made on the "GitHub Gist":gist.
 

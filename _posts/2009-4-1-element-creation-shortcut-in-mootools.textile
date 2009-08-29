@@ -6,18 +6,24 @@ category: javascript
 
 Lately, I've been bothered about the amount of typing and lines required to create a simple element in MooTools.
 
-bc(javascript). var curly = new Element('div', {
+{% highlight javascript %}
+var curly = new Element('div', {
   id : 'curly',
   'class' : 'stooge'
 });
+{% endhighlight %}
 
 In jQuery, you're given the convenience of writing HTML into the jQuery function --
 
-bc(javascript). var $curly = $('<div id="curly" class="stooge" />');
+{% highlight javascript %}
+var $curly = $('<div id="curly" class="stooge" />');
+{% endhighlight %}
 
 To me, this is quick and easy, but it's very unnatural typing HTML into JavaScript and I've seen this convenience become quickly (and horrifyingly) abused.[1]  MooTools deserves something cleaner and cooler, so today I realized I could use a limited selector to create an element.  I liked that idea very much.
 
-bc(javascript). var curly = $E('div#curly.stooge');
+{% highlight javascript %}
+var curly = $E('div#curly.stooge');
+{% endhighlight %}
 
 +([*update:*] Apparently I'm not the first to think of this.  A couple weeks before I wrote this post, "this commit":github was made to MooTools 2.0 adding this capability to @new Element@. The idea came from "Thomas Aylott":subtle.  I am so happy to see this become a part of the next version of MooTools!)+
 
@@ -25,7 +31,8 @@ bc(javascript). var curly = $E('div#curly.stooge');
 [subtle]http://subtlegradient.com/ 
 I know, [@$E@] was used in MooTools 1.1 for finding an element by a selector with an optional filter, but that is longer the case in MooTools 1.2.  Besides, [@$A@] and [@$H@] are used for to _create_ a new array or hash, respectively, so it seems only natural to me to use [@$E@] for creating an element.  If you don't like my reasoning, then you can change the name and I promise I won't hunt you down.
 
-bc(javascript). function $E(tag, props) {
+{% highlight javascript %}
+function $E(tag, props) {
   if (typeof props == 'string')
     props = { style : props };
   if (typeof tag == 'string') {
@@ -38,18 +45,23 @@ bc(javascript). function $E(tag, props) {
   }
   return new Element(tag || 'div', props);
 };
+{% endhighlight %}
 
 +([*edit:*] a style string can now optionally be passed into props, further updates will be on GitHub "here":gist)+
 
 With this new magical utility function, you can quickly and easily create elements with an optional id and any number of classes, along with additional properties passed into the optional second argument.  In fact, you can omit a tag and it'll default to a @<div>@.
 
-bc(javascript). var moe = $E('#moe.stooge.leader', {...});
+{% highlight javascript %}
+var moe = $E('#moe.stooge.leader', {...});
+{% endhighlight %}
 
 I'm pretty excited about using this new shortcut, and I hope you are too.  Please shout out in the comments if you find it useful or have any tweaks.
 
 *Note to plugin developers:* If you decide to use this, please place it inside of a closure so it doesn't override someone else's [@$E@] function.  I saw this suggestion on the "MooTools Twitter":twitter,[2] so I can imagine this becoming a problem --
 
-bc(javascript). $E = document.getElement.bind(document);
+{% highlight javascript %}
+$E = document.getElement.bind(document);
+{% endhighlight %}
 
 fn1. Some even prefer to use double quotes and then escape all the attribute quotes.  Ughh!
 
