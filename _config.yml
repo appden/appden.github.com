@@ -6,7 +6,7 @@ exclude:
     - README.md
 
 title:          AppDen
-url:            http://appden.github.com
+url:            http://appden.com
 feed:           /atom.xml
 description:    "Advanced JavaScript techniques, tips on avoiding those nasty CSS bugs, and musings on technological progress."
 comment:        Jekyll is awesome
@@ -60,6 +60,10 @@ footer:
 
     - verb:     Listening
       action:   Pandora of course
+      
+copyright:
+    - Design by <a href="http://ipsleung.com">Iris Leung</a>
+    - "&copy; Copyright 2009, AppDen. All Rights Reserved."
       
 css:
     - /lib/appden.css

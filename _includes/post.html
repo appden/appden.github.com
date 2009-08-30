@@ -24,7 +24,7 @@
 		</p>
 		<p>
 			Filed in
-			{{ post.categories | array_to_sentence_string }}
+			{{ post.categories | array_to_sentence_string | capitalize }}
 			{% unless post.tags == empty %}
 				and tagged
 				{{ post.tags | array_to_sentence_string }}

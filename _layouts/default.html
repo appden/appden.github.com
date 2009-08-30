@@ -50,8 +50,9 @@
 				{% endfor %}
 			</div>
 			<div id="copyright">
-				<div>Design by <a href="http://ipsleung.com">Iris Leung</a></div>
-				<div>&copy; Copyright 2009, AppDen. All Rights Reserved.</div>
+				{% for line in site.copyright %}
+					<div>{{ line }}</div>
+				{% endfor %}
 			</div>
 		</div>
 		
