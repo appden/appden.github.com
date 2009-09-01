@@ -70,6 +70,6 @@ css:
     - /lib/syntax.css
     
 js:
-    - /lib/mootools-core.js
+    - http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools.js
     - /lib/mootools-more.js
     - /lib/appden.js
