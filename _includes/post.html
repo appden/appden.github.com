@@ -7,7 +7,7 @@
 		{% endif %}
 	</h2>
 	
-	<div class="entry-date">{{ post.date | date:'%b <div>%d</div> %Y' }}</div>
+	<div class="entry-date">{{ post.date | date:'%b <div>%d</div> %Y' | replace:'>0','>' }}</div>
 	
 	<div class="entry-contents">
 		{% if detail %}
@@ -20,7 +20,7 @@
 	<div class="entry-footer">
 		<a class="entry-comments" href="{{ post.url }}#disqus_thread">0</a>
 		<p>
-			Posted by {{ site.author.name }} on {{ post.date | date_to_long_string }}
+			Posted by {{ site.author.name }} on {{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}
 		</p>
 		<p>
 			Filed in
