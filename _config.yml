@@ -1,6 +1,6 @@
 pygments:       true
 permalink:      /:categories/:title/
-paginate:       5
+paginate:       4
 
 exclude:
     - README.md
@@ -21,13 +21,6 @@ about: >
     You can follow me on <a href="http://twitter.com/appden">Twitter</a>, fork me
     <a href="http://github.com/appden">GitHub</a>, and check out some of my recent work
     on my <a href="/portfolio/">portfolio</a>.
-    
-bookmarks:
-    - title:    Daring Fireball
-    - url:      http://daringfireball.net
-    
-    - title:    jQuery vs MooTools
-    - url:      http://www.jqueryvsmootools.com/
     
 disqus:
     id:         appden

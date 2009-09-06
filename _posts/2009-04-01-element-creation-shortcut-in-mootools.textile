@@ -55,7 +55,7 @@ var moe = $E('#moe.stooge.leader', {...});
 
 I'm pretty excited about using this new shortcut, and I hope you are too.  Please shout out in the comments if you find it useful or have any tweaks.
 
-*Note to plugin developers:* If you decide to use this, please place it inside of a closure so it doesn't override someone else's [@$E@] function.  I saw this suggestion on the "MooTools Twitter":twitter,[2] so I can imagine this becoming a problem --
+*Note to plugin developers:* If you decide to use this, please place it inside of a closure so it doesn't override someone else's [@$E@] function.  I saw this suggestion on the ["MooTools Twitter":twitter][2] so I can imagine this becoming a problem --
 
 {% highlight javascript %}
 $E = document.getElement.bind(document);

@@ -15,11 +15,13 @@
 	</div>
 {% endif %}
 
-<div class="widget">
-	<h3>Good Reads</h3>
-	<ul>
-		{% for bookmark in site.bookmarks %}
-			<li><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></li>
-		{% endfor %}
-	</ul>
-</div>
+{% if site.bookmarks %}
+	<div class="widget">
+		<h3>Good Reads</h3>
+		<ul>
+			{% for bookmark in site.bookmarks %}
+				<li><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}
