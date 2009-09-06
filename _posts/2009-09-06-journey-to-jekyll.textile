@@ -1,0 +1,34 @@
+--- 
+layout:   post
+title:    Journey to Jekyll
+category: personal
+---
+
+I did it.  I've freed myself from the shackles of a database, excessively complex blogging software, and many wasted computing cycles.  I've escaped to the greener pastures of text and git with "Jekyll":jekyll, the same engine that powers "GitHub Pages":ghpages.  You can too!
+
+It's very simple, check out this site's "source":source to see what I mean.  Feel free to "steal" my code.  I kept it general enough where changing the YAML and CSS will give you a brand new working blog.  It's hard to even describe how easy it will be to manage this site thanks to Jekyll.  It's so simple and powerful, yet young and full of potential.
+
+h3. Deploys
+
+Tate Johnson has an "excellent post":tatey on setting up deploys to DreamHost using @git push@, but I wanted my setup to be even simpler so I opted for rsync controlled by Rake.  This translates into needing *zero* setup on the server, just @sudo gem install jekyll@ on your machine to develop locally.  See my Rakefile if you're curious, it's very easy to understand once you see it.
+
+h3. Comments
+
+Easy. "DISQUS":disqus. Done. Next question[1].
+
+h3. Movable Type
+
+"Movable Type":mt provides hideous default templates and a very programmer-[*un*]friendly template language.  While I believe it's cleaner than "Wordpress":wp, it still suffers from having being too complicated for the average blogger.   The experience of editing templates is dreadful, unless you have manually "linked" each individual template to a file then setup SVN hooks to update those files and trigger a full rebuild of your site.  Even after all that, it's still awful, and don't get me started on maintaining a separate development version of your blog.
+
+h3. Conclusion
+
+This site is now completely naked, the source exposed for all the world to gawk at on GitHib, so "check it out":source.  I'm loving the feeling of complete transparency, it forces me to write better quality, more generic code.  Thanks to Jekyll, I'll be able to happily further develop my site, rather than dread touching it.
+
+[jekyll]http://jekyllrb.com/
+[ghpages]http://pages.github.com/
+[mt]http://www.movabletype.org/
+[wp]http://wordpress.org/
+[github]http://github.com/
+[source]http://github.com/appden/appden.github.com/tree
+[tatey]http://tatey.com/2009/04/29/jekyll-meets-dreamhost-automated-deployment-for-jekyll-with-git.html
+[disqus]http://disqus.com
