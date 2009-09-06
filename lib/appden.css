@@ -219,10 +219,9 @@ h3 {
 
 #nav {
 	position: absolute;
-	bottom: 45px;
+	bottom: 44px;
 	left: 350px;
 	font-size: 12px;
-	font-family: Verdana, sans-serif;
 }
 
 #nav a {

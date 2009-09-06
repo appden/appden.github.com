@@ -8,11 +8,6 @@ Tonight, I've been playing with the fantastic MooTools plugin, "ReMooz":remooz b
 
 +([*update:*] I just discovered "Jan Kassens":jan blogged a similar custom event, _outerClick_.  We took very different approaches, but I thought I'd give proper credit)+
 
-[remooz]http://digitarald.de/project/remooz
-[digi]http://digitarald.de
-[jan]http://blog.kassens.net/outerclick-event 
-
-
 {% highlight javascript %}
 Element.Events.clickout = {
   base : 'click',  // attach click event to element
@@ -70,6 +65,9 @@ fn2. A quick "refresher course":events on event bubbling, if desired.
 
 fn3. I just made that term up.  I hope it sticks.
 
+[remooz]http://digitarald.de/project/remooz
+[digi]http://digitarald.de
+[jan]http://blog.kassens.net/outerclick-event
 [clickout]http://gist.github.com/91436
 [oneevent]http://gist.github.com/91434
 [one]http://docs.jquery.com/Events/one

@@ -3,6 +3,7 @@ layout:   post
 title:    BindAll Class Mutator for Saving Your Sanity
 category: javascript
 ---
+
 MooTools is just the best JavaScript thing ever.  And I say that totally subjectively because I honestly don't have much experience with anything else other than jQuery.  Some of the design decisions are nothing short of genius -- custom events, element properties, and class mutators -- to name a few.
 
 The "Binds mutator":binds is particularly headache relieving.  My only issue with it is that you need to list out all the methods you want bound, which somehow, I am very prone to jacking up due to forgetfulness or quick refactoring.
@@ -12,9 +13,6 @@ Binds : ['update', 'include', ...]  // yadi yada
 {% endhighlight %}
 
 So since I have nothing better to do in the airport than watch a depressing "House episode":house, I figured I'd write my own BindAll mutator to save myself from my own misery (and maybe save you from yours).
-
-[binds]http://www.clientcide.com/code-releases/classbinds-for-mootols-is-back/
-[house]http://www.fox.com/house/recaps/s5_e20.htm
  
 {% highlight javascript %}
 Class.Mutators.BindAll = function(self, bool) {
@@ -58,6 +56,8 @@ This might not be for everyone, but for me, I can't see why I wouldn't want all 
 
 Another class mutator that has gotten a fair bit of my attention is Privates, which has had many implementations, including "Nathan White's":nwhite (deeply flawed), "Thomas Dullnig's":thomasd (flawed), and "Sean McCarthur's":mccarthur (not flawed, but not pretty either).  I've totally embarrassed myself in an email to "Aaron Newton":aaron over the matter, essentially arguing the inclusion of Nathan White's implementation into More before realizing that it was creating a bunch of global variables.  Soon, I'll write about my own implementation that I just made, as soon as I quadruple check that it isn't flawed as well. That one will need specs!
 
+[binds]http://www.clientcide.com/code-releases/classbinds-for-mootols-is-back/
+[house]http://www.fox.com/house/recaps/s5_e20.htm
 [gist]http://gist.github.com/95379
 [nwhite]http://www.nwhite.net/2008/10/10/private-methods-with-mootools-update2/
 [thomasd]http://thomasdullnig.blogspot.com/2009/01/private-members-in-mootools-i-do-it-my.html

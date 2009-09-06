@@ -27,8 +27,6 @@ var curly = $E('div#curly.stooge');
 
 +([*update:*] Apparently I'm not the first to think of this.  A couple weeks before I wrote this post, "this commit":github was made to MooTools 2.0 adding this capability to @new Element@. The idea came from "Thomas Aylott":subtle.  I am so happy to see this become a part of the next version of MooTools!)+
 
-[github]http://github.com/kamicane/mootools-core/commit/c157e231c36d9935053b26dedd08eeb50560f82f
-[subtle]http://subtlegradient.com/ 
 I know, [@$E@] was used in MooTools 1.1 for finding an element by a selector with an optional filter, but that is longer the case in MooTools 1.2.  Besides, [@$A@] and [@$H@] are used for to _create_ a new array or hash, respectively, so it seems only natural to me to use [@$E@] for creating an element.  If you don't like my reasoning, then you can change the name and I promise I won't hunt you down.
 
 {% highlight javascript %}
@@ -67,6 +65,8 @@ fn1. Some even prefer to use double quotes and then escape all the attribute quo
 
 fn2. My "last post":events on custom events was linked there!
 
+[github]http://github.com/kamicane/mootools-core/commit/c157e231c36d9935053b26dedd08eeb50560f82f
+[subtle]http://subtlegradient.com/
 [gist]http://gist.github.com/91433
 [twitter]http://twitter.com/mootools
 [events]http://appden.com/javascript/fun-with-custom-events-on-elements-in-mootools

@@ -8,9 +8,6 @@ A while back I made "Proggit":proggit a regular stop on my daily Internet stroll
 
 For the uninitiated, lazy evaluation is, in a nutshell, the concept of a program not computing the value of something until absolutely needed.  This is especially useful for long (perhaps even infinite) lists that would cause severe nausea or swelling to compute ahead of time.  The example I read about used the "Fibonacci sequence":fibs to butter up my brain, so that is what I will use here to electrify yours.
 
-[proggit]http://www.reddit.com/r/programming
-[haskell]http://www.haskell.org/~pairwise/intro/section1.html#part5
-[fibs]http://en.wikipedia.org/wiki/Fibonacci_number 
 Quite simply, I wanted the constructor of my _Lazy List_ to take a definition function, such as the following for the Fibonacci sequence:
 
 {% highlight javascript %}
@@ -49,7 +46,9 @@ Array-like methods, such as @slice@ and @forEach@, can be added to our generator
 
 fn1. For more of the bleeding edge, read "John Resig's rundown of JavaScript 1.8":resig and "Mozilla's coverage of JavaScript 1.7":mozilla
 
-
+[proggit]http://www.reddit.com/r/programming
+[haskell]http://www.haskell.org/~pairwise/intro/section1.html#part5
+[fibs]http://en.wikipedia.org/wiki/Fibonacci_number
 [firefox]https://developer.mozilla.org/en/New_in_JavaScript_1.8#Generator_expressions
 [resig]http://ejohn.org/blog/javascript-18-progress/
 [mozilla]http://developer.mozilla.org/en/New_in_JavaScript_1.7

@@ -10,10 +10,6 @@ I just spent a few hours tracking down this lovely bug that broke my "portfolio 
 
 I first discovered this when the "@oneEvent@":oneevent method that I added to the Events Class was not getting implemented into my other Classes.  The JS.Class blog "mentioned":jsclass a @Function.prototype@ enumeration bug that may be related, but other than that I couldn't find any mention of this problem on Google.
 
-[portfolio]http://appden.com/portfolio/
-[dontenum]https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute
-[oneevent]http://appden.com/javascript/fun-with-custom-events-on-elements-in-mootools/
-[jsclass]http://blog.jcoglan.com/2009/03/04/urgent-bug-fix-release-for-jsclass-16/ 
 Here is the reduction that I submitted to Apple:
 
 {% highlight javascript %}
@@ -64,3 +60,8 @@ check for pool in mansion...true
 The line, *mansion has a pool*, is never printed in Safari 4 Beta!  It does, however, get printed in the latest Webkit Nightly, but I'm not sure when this bug was fixed and if Apple has merged that fix into their Safari 4 branch.  I hope they have already, and if not, that they do so when they read my bug report.
 
 I hope this helped put somebody's mind at ease.
+
+[portfolio]http://appden.com/portfolio/
+[dontenum]https://developer.mozilla.org/en/ECMAScript_DontEnum_attribute
+[oneevent]http://appden.com/javascript/fun-with-custom-events-on-elements-in-mootools/
+[jsclass]http://blog.jcoglan.com/2009/03/04/urgent-bug-fix-release-for-jsclass-16/
