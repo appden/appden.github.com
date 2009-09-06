@@ -5,6 +5,14 @@ task :build do
   sh "jekyll"
 end
 
+desc "Serve on Localhost with port 4000"
+task :default do
+  sh "jekyll --server --auto"
+end
+
+desc "Deploy to Dev"
+task :deploy => :"deploy:dev"
+
 namespace :deploy do
   desc "Deploy to Dev"
   task :dev => :build do
@@ -23,7 +31,4 @@ namespace :deploy do
     sh "rsync -rtz --delete _site/ scottwkyle@appden.com:~/#{domain}/"
   end
 end
-
-desc "Deploy to Live"
-task :deploy => :"deploy:dev"
 
