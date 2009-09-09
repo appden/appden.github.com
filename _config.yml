@@ -49,7 +49,7 @@ nav:
 
 footer:
     - verb:     Thinking
-      action:   YAML is awesome
+      action:   "YAML &gt; JSON"
 
     - verb:     Listening
       action:   Pandora of course
@@ -63,6 +63,6 @@ css:
     - /lib/syntax.css
     
 js:
-    - http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools.js
+    - http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js
     - /lib/mootools-more.js
     - /lib/appden.js

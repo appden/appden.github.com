@@ -14,7 +14,7 @@ Tate Johnson has an "excellent post":tatey on setting up deploys to DreamHost us
 
 h3. Comments
 
-Easy. "DISQUS":disqus. Done. Next question[1].
+Easy. "DISQUS":disqus. Done. Next question.
 
 h3. Movable Type
 
