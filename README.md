@@ -1,3 +1,13 @@
+License
+=======
+
+The following directories and their contents copyright © Scott Kyle:
+
+_posts/  
+lib/images/
+
+Everything else is MIT Licensed.  Attribution is always appreciated.
+
 Migrating AppDen.com to Jekyll
 ==============================
 
