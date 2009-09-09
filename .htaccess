@@ -24,7 +24,7 @@ RewriteRule ^(.*)/[^/]+\.(pkg|dmg|zip)$ $1/ [R,NC,L]
 
 # Prevent accessing hidden files
 
-RewriteRule ^(.*/)?\.[^.]+$ - [F,NS,L]
+RewriteRule ^(.*/)?\. - [F,NS,L]
 
 # Feedburner
 
