@@ -1,13 +1,21 @@
 
+def jekyll(opts = "", path = "")
+  sh "rm -rf _site"
+  sh path + "jekyll " + opts
+end
+
 desc "Build site using Jekyll"
 task :build do
-  sh "rm -rf _site"
-  sh "jekyll"
+  jekyll
 end
 
 desc "Serve on Localhost with port 4000"
 task :default do
-  sh "jekyll --server --auto"
+  jekyll("--server --auto")
+end
+
+task :test do
+  jekyll("--server --auto", "../jekyll/bin/")
 end
 
 desc "Deploy to Dev"
