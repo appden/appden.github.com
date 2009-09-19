@@ -1,5 +1,5 @@
 
-{% if site.about %}
+{% if site.about and page.permalink != '/about/' %}
 	<div class="widget">
 		<h3><a href="/about/">About Me</a></h3>
 		<p>{{ site.about }}</p>
