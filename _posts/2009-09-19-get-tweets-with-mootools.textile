@@ -1,0 +1,54 @@
+---
+layout:   post
+title:    Get Tweets with MooTools
+category: javascript
+---
+
+To give this site a little _dynamism_, I decided (as many others have) to pull my latest tweets into the rather barren sidebar.  David Walsh's "TwitterGitter":twittergitter was a good start, but I saw some room for improvement by subclassing @Request.JSONP@.  The result is a great example of how "MooTools":mootools grants you a great deal of object oriented power. I kept David's @linkify@ method (with some regex tweaks) because it is awesome.
+
+{% highlight javascript %}
+Request.Twitter = new Class({
+
+  Extends: Request.JSONP,
+
+  options: {
+    linkify: true,
+    url: 'http://twitter.com/statuses/user_timeline/{term}.json',
+    data: {
+      count: 5
+    }
+  },
+  
+  initialize: function(term, options){
+    this.parent(options);
+    this.options.url = this.options.url.substitute({term: term});
+  },
+  
+  success: function(data, script){
+    if (this.options.linkify) data.each(function(tweet){
+      tweet.text = this.linkify(tweet.text);
+    }, this);
+    
+    // keep subsequent calls newer
+    if (data[0]) this.options.data.since_id = data[0].id;
+    
+    this.parent(data, script);
+  },
+  
+  linkify: function(text){
+    // modified from TwitterGitter by David Walsh (davidwalsh.name)
+    // courtesy of Jeremy Parrish (rrish.org)
+    return text.replace(/(https?:\/\/[\w\-:;?&=+.%#\/]+)/gi, '<a href="$1">$1</a>')
+               .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+               .replace(/(^|\W)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>');
+  }
+  
+});
+{% endhighlight %}
+
+Hopefully the code speaks for itself. I'll keep "this Gist":gist update to date with any bugfixes.  
+
+
+[twittergitter]http://davidwalsh.name/mootools-twitter-plugin
+[mootools]http://mootools.net
+[gist]http://gist.github.com/189534
