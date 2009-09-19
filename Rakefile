@@ -1,5 +1,5 @@
 
-def jekyll(opts = "", path = "")
+def jekyll(opts = "", path = "../jekyll/bin/")
   sh "rm -rf _site"
   sh path + "jekyll " + opts
 end
@@ -14,8 +14,8 @@ task :default do
   jekyll("--server --auto")
 end
 
-task :test do
-  jekyll("--server --auto", "../jekyll/bin/")
+task :stable do
+  jekyll("--server --auto", "")
 end
 
 desc "Deploy to Dev"
