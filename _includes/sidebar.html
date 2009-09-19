@@ -1,8 +1,10 @@
 
-<div class="widget">
-	<h3><a href="/about/">About Me</a></h3>
-	<p>{{ site.about }}</p>
-</div>
+{% if site.about %}
+	<div class="widget">
+		<h3><a href="/about/">About Me</a></h3>
+		<p>{{ site.about }}</p>
+	</div>
+{% endif %}
 
 {% if page.title %}
 	<div class="widget">
@@ -12,6 +14,13 @@
 				<li><a href="{{ post.url }}">{{ post.title }}</a></li>
 			{% endfor %}
 		</ul>
+	</div>
+{% endif %}
+
+{% if site.author.twitter %}
+	<div class="widget">
+		<h3><a href="http://twitter.com/{{ site.author.twitter }}">Tweets</a></h3>
+		<div id="tweets"></div>
 	</div>
 {% endif %}
 

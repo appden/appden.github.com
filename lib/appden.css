@@ -513,6 +513,10 @@ h3 {
 	color: #4d6c70;
 }
 
+#tweets .tweet {
+	padding-bottom: 10px;
+}
+
 #search {
 	margin-left: -24px;
 	width: 320px;
