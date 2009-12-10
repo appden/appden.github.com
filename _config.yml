@@ -29,21 +29,13 @@ disqus:
 nav:
     - name:     Blog
       url:      /
-      
-    - name:     Apps
-      subnav:
-        - name: Coming Soon
     
-    - name:     Projects
-      subnav:
-        - name: Coming Soon
-        
+    - name:     Portfolio
+      url:      /portfolio/
+    
     - name:     About
       url:      /about/
       subnav:
-        - name: Portfolio
-          url:  /portfolio/
-          
         - name: Contact
           url:  mailto:scott-at-dotcom-after-appden
     
