@@ -9,7 +9,7 @@ title:          AppDen
 url:            http://appden.com
 feed:           /atom.xml
 description:    "Advanced JavaScript techniques, tips on avoiding those nasty CSS bugs, and musings on technological progress."
-comment:        Jekyll is awesome
+comment:        Isn't it ironic there are no apps?
 
 author:
     name:       Scott Kyle
@@ -17,10 +17,9 @@ author:
     twitter:    appden
     
 about: >
-    Hi, I'm Scott Kyle, a JavaScript and Apple enthusiast.
-    I recently became an offical developer for <a href="http://mootools.net">MooTools</a>.
-    You can follow me on <a href="http://twitter.com/appden">Twitter</a>, fork me
-    <a href="http://github.com/appden">GitHub</a>, and check out some of my recent work
+    Hi, I'm Scott Kyle, a <a href="http://mootools.net">MooTools</a> developer
+    and Apple addict. You can follow me on <a href="http://twitter.com/appden">Twitter</a>,
+    fork me on <a href="http://github.com/appden">GitHub</a>, and check out some of my work
     on my <a href="/portfolio/">portfolio</a>.
     
 disqus:
@@ -42,10 +41,10 @@ nav:
 
 footer:
     - verb:     Thinking
-      action:   "YAML &gt; JSON"
+      action:   How do people keep up with blogging?
 
     - verb:     Listening
-      action:   Pandora of course
+      action:   Sexy Bitch Radio on Pandora
       
 copyright:
     - Design by <a href="http://ipsleung.com">Iris Leung</a>

@@ -46,7 +46,7 @@ Request.Twitter = new Class({
 });
 {% endhighlight %}
 
-Hopefully the code speaks for itself. I'll keep "this Gist":gist update to date with any bugfixes.  
+Hopefully the code speaks for itself. I'll keep "this Gist":gist updated with any bugfixes.  
 
 
 [twittergitter]http://davidwalsh.name/mootools-twitter-plugin

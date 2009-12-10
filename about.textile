@@ -9,12 +9,9 @@ h2. About Me
 !>{margin-left: 10px;}/lib/images/me.jpg(Scott Kyle in MooTools shirt)!
 
 (double-space)* Scott Kyle
-* From around Sacramento, CA
+* From near Sacramento, now living near San Francisco
 * Studied Computer & Telecommunications Engineering at the University of Pennsylvania
-* I enjoy transforming complex designs into XHTML/CSS, but I *really* take pleasure in programming the interaction in JavaScript with MooTools.
-* JavaScript is a beautiful language with some warts, not an ugly language with some good parts.  I don't care what other people say.
-* I have a strong distaste for "hacks."  They're rarely needed and nobody should be proud of using them.
-* I'm interested in freelancing for small, interaction-focused projects.  Please check out my "portfolio":/portfolio/ for highlights of my work, and "contact me":mailto:scott-at-dotcom-after-appden if you think that we'd make a great team.
+* I'll be more open about myself in the future
 
 h2{padding-top: 20px;}. Site Credits
 
