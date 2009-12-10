@@ -64,6 +64,6 @@ css:
     - /lib/syntax.css
     
 js:
-    - http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js
+    - http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js
     - /lib/mootools-more.js
     - /lib/appden.js
