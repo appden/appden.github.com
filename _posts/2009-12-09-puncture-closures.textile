@@ -1,0 +1,43 @@
+---
+layout:   post
+title:    Puncture Closures to Create Wormholes
+category: javascript
+---
+
+Have you ever wanted access to a closure's precious private variables?  Has static scoping got you down?  Well put your mind at ease, and worry no longer![1]
+
+{% highlight javascript %}
+Function.prototype.puncture = function(){
+  var wormhole = function(__cmd__){
+    return eval(__cmd__);
+  };
+
+  var source = ('' + this).match(/function.+?\{([\s\S]*)\}/)[1];
+  var fn = new Function('this.wormhole=' + wormhole + '\n' + source);
+
+  fn.prototype = this.prototype;
+  for (var prop in this){
+    if (this.hasOwnProperty(prop)) fn[prop] = this[prop];
+  }
+
+  return fn;
+};
+{% endhighlight %}
+
+Now I know you're excited, and probably asking yourself how you can start puncturing closures today.  Well here's an example of how it works!
+
+{% highlight javascript %}
+var WellDesignedClass = function(){
+  var secret = 'Nobody can access this variable, muahahaha';
+};
+
+var PuncturedClass = WellDesignedClass.puncture();
+var useless = new PuncturedClass;
+var secret = useless.wormhole('secret'); // not so secret anymore!
+{% endhighlight %}
+
+You can watch "this gist":gist for improvements on this must-have plugin!
+
+fn1. This code merely proves a concept. It could be fleshed out to actually accomplish things, but that would be insane.
+
+[gist]http://gist.github.com/248013
