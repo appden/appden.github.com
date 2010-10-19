@@ -17,7 +17,7 @@ author:
     twitter:    appden
     
 about: >
-    Hi, I'm Scott Kyle, a <a href="http://mootools.net">MooTools</a> developer
+    I'm Scott Kyle, a <a href="http://mootools.net">MooTools</a> developer
     and Apple addict. You can follow me on <a href="http://twitter.com/appden">Twitter</a>,
     fork me on <a href="http://github.com/appden">GitHub</a>, and check out some of my work
     on my <a href="/portfolio/">portfolio</a>.
@@ -48,7 +48,7 @@ footer:
       
 copyright:
     - Design by <a href="http://ipsleung.com">Iris Leung</a>
-    - "&copy; Copyright 2009, AppDen. All Rights Reserved."
+    - "&copy; Copyright 2010, AppDen. All Rights Reserved."
       
 css:
     - /lib/appden.css

@@ -9,13 +9,13 @@ h2. About Me
 !>{margin-left: 10px;}/lib/images/me.jpg(Scott Kyle in MooTools shirt)!
 
 (double-space)* Scott Kyle
-* From near Sacramento, now living near San Francisco
-* Studied Computer & Telecommunications Engineering at the University of Pennsylvania
-* I'll be more open about myself in the future
+* "Inkling":http://inkling.com
+* Sacramento ➡ Philadelphia ➡ NYC ➡ SF
+* Computer & Telecommunications Engineering at the University of Pennsylvania
 
 h2{padding-top: 20px;}. Site Credits
 
 * "Iris Leung":http://ipsleung.com (Design)
 * "Jekyll":http://jekyllrb.com/ (Blog)
-* "MooTools":http://mootools.net
+* "MooTools":http://mootools.net (Everywhere)
 * "ReMooz":http://digitarald.de/project/remooz/ (Portfolio)
