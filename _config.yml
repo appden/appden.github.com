@@ -4,6 +4,7 @@ paginate:       5
 
 exclude:
     - README.md
+    - Rakefile
 
 title:          AppDen
 url:            http://appden.com
